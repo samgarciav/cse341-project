@@ -41,3 +41,9 @@
   width: 5rem;
   height: 5rem;
 }
+
+#userErrors {
+  color: red;
+  background-color: black;
+  text-align: center;
+}

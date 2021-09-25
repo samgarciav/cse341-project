@@ -1,4 +1,3 @@
-const { ESRCH } = require('constants');
 const fs = require('fs');
 
 const users = ['Alex', 'Cons', 'Max'];
