@@ -1,13 +1,7 @@
-//TA02 PLACEHOLDER
-// Remember, you can make more of these placeholders yourself!
-const express = require('express');
-const router = express.Router();
-
-
 const userArray = ['Erick', 'Abrahm', 'Sam'];
 
-router.get('/', (req, res, next) => {
-  res.render('pages/ta02', {
+exports.getTa02 = (req, res, next) => {
+  res.render('pages/teamPages/ta02', {
     title: 'Team Activity 02',
     users: userArray,
     errorMessage: '',
@@ -15,9 +9,9 @@ router.get('/', (req, res, next) => {
     activeTA03: true, // For HBS
     contentCSS: true, // For HBS
   });
-});
+}
 
-router.post('/add-user', (req, res, next) => {
+exports.addUser = (req, res, next) => {
   const newUser = req.body.newUser;
   let errorMessage = '';
   if (userArray.includes(newUser)) {
@@ -26,7 +20,7 @@ router.post('/add-user', (req, res, next) => {
   else {
     userArray.push(req.body.newUser);
   }
-  res.render('pages/ta02', {
+  res.render('pages/teamPages/ta02', {
     title: 'Team Activity 02',
     users: userArray,
     errorMessage: errorMessage,
@@ -34,9 +28,9 @@ router.post('/add-user', (req, res, next) => {
     activeTA03: true, // For HBS
     contentCSS: true, // For HBS 
   });
-});
+}
 
-router.post('/delete-user', (req, res, next) => {
+exports.deleteUser = (req, res, next) => {
   const userToDelete = req.body.userToDelete;
   let errorMessage = '';
   if (userArray.includes(userToDelete)) {
@@ -47,7 +41,7 @@ router.post('/delete-user', (req, res, next) => {
   } else {
     errorMessage = 'User does not exist, verify the speeling';
   }
-  res.render('pages/ta02', {
+  res.render('pages/teamPages/ta02', {
     title: 'Team Activity 02',
     users: userArray,
     errorMessage: errorMessage,
@@ -55,11 +49,4 @@ router.post('/delete-user', (req, res, next) => {
     activeTA03: true, // For HBS
     contentCSS: true, // For HBS 
   });
-});
-
-
-
-
-
-
-module.exports = router;
+}

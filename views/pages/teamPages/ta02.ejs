@@ -2,11 +2,11 @@
 <html>
 
 <head>
-  <% include ../includes/header.ejs %>
+  <% include ../../includes/header.ejs %>
 </head>
 
 <body>
-  <% include ../includes/nav.ejs %>
+  <% include ../../includes/nav.ejs %>
   <div class="jumbotron text-center">
     <div class="container">
       <h1>
@@ -22,7 +22,7 @@
       <% } %>
 
     <div>
-      <form action="/ta02/add-user" method="POST">
+      <form action="/teamActivities/ta02/add-user" method="POST">
         <label>Enter the new user: <input type="text" name="newUser" id="newUser"></label>
       </form>
     </div>
@@ -37,7 +37,7 @@
     </div>
 
     <div>
-      <form action="/ta02/delete-user" method="POST">
+      <form action="/teamActivities/ta02/delete-user" method="POST">
         <label>Delete user: <input type="text" name="userToDelete" id="newUser"></label>
       </form>
     </div>
